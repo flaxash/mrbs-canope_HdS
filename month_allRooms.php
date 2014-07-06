@@ -538,7 +538,7 @@ show_colour_key();
 // Draw the three month calendars
 if ($display_calendar_bottom)
 {
-  minicals($year, $month, $day, $area, $room, 'month_allRooms');
+  minicals($year, $month, $day, $area, $room, 'month');
 }
 
 output_trailer();

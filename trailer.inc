@@ -34,7 +34,9 @@ function generate_trailer()
   }
   if (!empty($room))
   {
+	 $paramsNoRoom = $params;
     $params .= "&amp;room=$room";
+	
   }
 
   $output .= "</div>";  // Close of the contents div
@@ -47,7 +49,7 @@ function generate_trailer()
     $output .= get_vocab("viewday")."</a>|";
     $output .= "<a href=\"week.php?year=$year&amp;month=$month&amp;day=$day$params\">";
     $output .= get_vocab("viewweek")."</a>|";
-    $output .= "<a href=\"month.php?year=$year&amp;month=$month&amp;day=$day$params\">";
+    $output .= "<a href=\"month_allRooms.php?year=$year&amp;month=$month&amp;day=$day$paramsNoRoom\">";
     $output .= get_vocab("viewmonth")."</a>\n";
     $output .= "</div>\n";
     $output .= "</div>\n";
@@ -169,7 +171,7 @@ function generate_trailer()
     // MONTHS
     $output .= "<div id=\"viewmonth\">\n";
     $output .= "<div class=\"trailer_label\">\n";
-    $output .= "<a href=\"month.php?year=$year&amp;month=$month&amp;day=$day$params\">".get_vocab("viewmonth").":</a>\n";
+    $output .= "<a href=\"month_allRooms.php?year=$year&amp;month=$month&amp;day=$day$paramsNoRoom\">".get_vocab("viewmonth").":</a>\n";
     $output .= "</div>\n";
   
     $output .= "<div class=\"trailer_links\">\n";
@@ -195,7 +197,7 @@ function generate_trailer()
       {
         $output .= "<span class=\"current\">\n[ ";
       }
-      $output .= "  <a href=\"month.php?year=$cyear&amp;month=$cmonth&amp;day=$cday$params\">$str</a>\n";
+      $output .= "  <a href=\"month_allRooms.php?year=$cyear&amp;month=$cmonth&amp;day=$cday$paramsNoRoom\">$str</a>\n";
       if ($i == 0)
       {
         $output .= "]</span>\n";
