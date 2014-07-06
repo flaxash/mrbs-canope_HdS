@@ -149,17 +149,17 @@ while (!checkdate($cm, $cd, $cy) && ($cd > 1))
 $before_after_links_html = "<div class=\"screenonly\">
   <div class=\"date_nav\">
     <div class=\"date_before\">
-      <a href=\"month.php?year=$yy&amp;month=$ym&amp;day=$yd&amp;area=$area&amp;room=$room\">
+      <a href=\"month_allRooms.php?year=$yy&amp;month=$ym&amp;day=$yd&amp;area=$area&amp;room=$room\">
           &lt;&lt;&nbsp;".get_vocab("monthbefore")."
         </a>
     </div>
     <div class=\"date_now\">
-      <a href=\"month.php?year=$cy&amp;month=$cm&amp;day=$cd&amp;area=$area&amp;room=$room\">
+      <a href=\"month_allRooms.php?year=$cy&amp;month=$cm&amp;day=$cd&amp;area=$area&amp;room=$room\">
           ".get_vocab("gotothismonth")."
         </a>
     </div>
     <div class=\"date_after\">
-       <a href=\"month.php?year=$ty&amp;month=$tm&amp;day=$td&amp;area=$area&amp;room=$room\">
+       <a href=\"month_allRooms.php?year=$ty&amp;month=$tm&amp;day=$td&amp;area=$area&amp;room=$room\">
           ".get_vocab("monthafter")."&nbsp;&gt;&gt;
         </a>
     </div>
@@ -538,7 +538,7 @@ show_colour_key();
 // Draw the three month calendars
 if ($display_calendar_bottom)
 {
-  minicals($year, $month, $day, $area, $room, 'month');
+  minicals($year, $month, $day, $area, $room, 'month_allRooms');
 }
 
 output_trailer();

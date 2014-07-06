@@ -1939,7 +1939,7 @@ function show_colour_key()
   // set the table width.   Default is 5, but try and avoid rows of unequal length
   switch (count($booking_types))
   {
-    case '6':
+    case '7':
       $table_width = 3;
       break;
     case '8':
@@ -1947,7 +1947,7 @@ function show_colour_key()
       $table_width = 4;
       break;
     default:
-      $table_width = 5;
+      $table_width = 6;
   }
   echo "<table id=\"colour_key\"><tr>\n";
   $n = 0;
