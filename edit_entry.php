@@ -548,6 +548,9 @@ function create_field_entry_custom_field($field, $key, $disabled=FALSE)
                   'mandatory'  => isset($is_mandatory_field["entry.$key"]) && $is_mandatory_field["entry.$key"]);
   // Output a checkbox if it's a boolean or integer <= 2 bytes (which we will
   // assume are intended to be booleans)
+  //pour tests
+  //echo($field['nature']);
+  
   if (($field['nature'] == 'boolean') || 
     (($field['nature'] == 'integer') && isset($field['length']) && ($field['length'] <= 2)) )
   {
@@ -561,6 +564,20 @@ function create_field_entry_custom_field($field, $key, $disabled=FALSE)
     $params['attributes'][] = 'rows="8"';
     $params['attributes'][] = 'cols="40"';
     generate_textarea($params);   
+  }
+  // canope
+  //Output a select list if it's an enum 
+  elseif ($field['nature'] == 'enum')
+  {
+	  $cadres = get_enum_values('cadre');
+	  echo count($cadres);
+                  
+	  foreach ($cadres as $key)
+	  {
+		$params['options'][$key] = $key;
+	  }
+  
+  generate_select($params);
   }
   // Otherwise output an input
   else

@@ -398,6 +398,10 @@ $vocab["type.A"]            = "DAFPA";
 $vocab["type.B"]            = "IA92";
 $vocab["type.C"]            = "CANOPE";
 $vocab["type.D"]            = "CADRES";
+$vocab["type.F"]            = "CG92";
+$vocab["type.G"]            = "AUTRE";
+$vocab["type.H"]            = "PDF";
+
 
 // General
 $vocab["back"]               = "Retour";

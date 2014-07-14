@@ -77,6 +77,17 @@ $auth["admin"][] = "administrator";
 /* Add lines from systemdefaults.inc.php and areadefaults.inc.php below here
    to change the default configuration. Do _NOT_ modify systemdefaults.inc.php
    or areadefaults.inc.php.  */
+/*********************************
+ * Site identification information
+ *********************************/
+$mrbs_admin = "Xavier Aubrun";
+$mrbs_admin_email = "xavier.aubrun@crdp.ac-versailles.fr";
+// NOTE:  there are more email addresses in $mail_settings below.    You can also give
+// email addresses in the format 'Full Name <address>', for example:
+// $mrbs_admin_email = 'Booking System <admin_email@your.org>';
+// if the name section has any "peculiar" characters in it, you will need
+// to put the name in double quotes, e.g.:
+// $mrbs_admin_email = '"Bloggs, Joe" <admin_email@your.org>';
 
 // The company name is mandatory.   It is used in the header and also for email notifications.
 // The company logo, additional information and URL are all optional.
@@ -127,7 +138,9 @@ $booking_types[] = "A";
 $booking_types[] = "B";
 $booking_types[] = "C";
 $booking_types[] = "D";
-
+$booking_types[] = "F";
+$booking_types[] = "G";
+$booking_types[] = "H";
 
 // Default type for new bookings
 $default_type = "C";
@@ -163,4 +176,38 @@ $default_view = "month";
 // room on the admin page.
 // Default is 0
 $default_room = 0;
+
+// PRIVATE BOOKINGS SETTINGS
+
+// These settings are all set per area through MRBS.   These are the default
+// settings that are used when a new area is created.
+
+// Only administrators or the person who booked a private event can see
+// details of the event.  Everyone else just sees that the time/period
+// is booked on the schedule.
+
+$private_enabled = FALSE;  // DEFAULT VALUE FOR NEW AREAS
+           // Display checkbox in entry page to make
+           // the booking private.
+
+$private_mandatory = FALSE;  // DEFAULT VALUE FOR NEW AREAS
+           // If TRUE all new/edited entries will 
+           // use the value from $private_default when saved.
+           // If checkbox is displayed it will be disabled.
+           
+$private_default = FALSE;  // DEFAULT VALUE FOR NEW AREAS
+           // Set default value for "Private" flag on new/edited entries.
+           // Used if the $private_enabled checkbox is displayed
+           // or if $private_mandatory is set.
+
+$private_override = "public";  // DEFAULT VALUE FOR NEW AREAS
+           // Override default privacy behavior. 
+           // "none" - Private flag on entry is used
+           // "private" - ALL entries are treated as private regardless
+           //             of private flag on the entry.
+           // "public" - NO entry is treated as private, regardless of
+           //            private flag on the entry.
+           // Overrides $private_default and $private_mandatory
+           // Consider your users' expectations of privacy before
+           // changing to "public" or from "private" to "none"
 

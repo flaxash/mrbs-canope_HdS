@@ -1939,7 +1939,7 @@ function show_colour_key()
   // set the table width.   Default is 5, but try and avoid rows of unequal length
   switch (count($booking_types))
   {
-    case '7':
+    case '6':
       $table_width = 3;
       break;
     case '8':
@@ -1947,7 +1947,7 @@ function show_colour_key()
       $table_width = 4;
       break;
     default:
-      $table_width = 6;
+      $table_width = 5;
   }
   echo "<table id=\"colour_key\"><tr>\n";
   $n = 0;
@@ -2135,8 +2135,10 @@ function make_room_select_html ($link, $area, $current, $year, $month, $day)
         $out_html .= "<span" . (($row['id'] == $current) ? ' class="current"' : '') . ">";
         $out_html .= htmlspecialchars($row['room_name']) . "</span></a></li>\n";
       }
+	  $out_html .= "<li><a href=\"month_allRooms.php?year=$year&amp;month=$month&amp;day=$day&amp;area=$area\" title=\"Toutes les salles\"><span>Toutes les salles (mois)</span></a></li>";
       $out_html .= "</ul>\n";
     }
+	
     $out_html .= "</div>\n";
   }
   return $out_html;
@@ -2586,4 +2588,24 @@ function is_cli()
     return FALSE;
   }
 }
-
+//fonctions persos ajoutées
+//retrouve les valeurs des champs enum de la table entry
+function get_enum_values( $field )
+{
+	$sql = "SHOW COLUMNS FROM mrbs_entry WHERE Field = '{$field}'";
+   	$result = sql_query($sql);
+	//print($result);
+	$row = mysql_fetch_array($result , MYSQL_NUM );
+	//print($row);
+   	$type = $row[1];
+	//print($type);
+	
+	preg_match('/enum\((.*)\)$/', $type, $matches);
+    foreach( explode(',', $matches[1]) as $value )
+    {
+         $enum[] = trim( $value, "'" );
+    }
+	//echo (count($row));
+	//echo (count($type));
+    return $enum;
+}

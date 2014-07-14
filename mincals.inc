@@ -55,7 +55,11 @@ class Calendar
     }
     else
     {
+		if ($page==='month_allRooms') {
+			return $page.".php?year=$year&amp;month=$month&amp;day=$day&amp;area=".$this->area;
+		} else {
       return $page.".php?year=$year&amp;month=$month&amp;day=$day&amp;area=".$this->area."&amp;room=".$this->room;
+		}
     }
   }
     
@@ -184,7 +188,7 @@ class Calendar
     {
       $link_day--;
     }
-    $link = $this->getDateLink($link_day, $this->month, $this->year, 'month');
+    $link = $this->getDateLink($link_day, $this->month, $this->year, 'month_allRooms');
     $s .= "<a href=\"$link\">$monthName&nbsp;$this->year</a>";
     $s .= "</th>\n"; 
     $s .= "</tr>\n";

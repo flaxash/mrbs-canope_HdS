@@ -93,7 +93,7 @@ echo make_room_select_html('month.php', $area, 0, $year, $month, $day);
 // Draw the three month calendars
 if (!$display_calendar_bottom)
 {
-  minicals($year, $month, $day, $area, $room, 'month');
+  minicals($year, $month, $day, $area, $room, 'month_allRooms');
 }
 
 echo "</div>\n";
