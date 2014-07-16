@@ -2,7 +2,7 @@
 
 // $Id: styling.inc 2784 2013-11-21 10:48:22Z cimorrison $
 
-// DEFAULT THEME
+// CANOPE THEME
 
 // ***** COLOURS ************************
 // Colours used in MRBS.    All the colours are defined here as PHP variables
@@ -100,9 +100,9 @@ $banner_border_width          = '0';  // (px)  border width for the outside of t
 $banner_border_cell_width     = '1';  // (px)  border width for the cells of the banner
 $main_table_border_width      = '0';  // (px)  border width for the outside of the main day/week/month tables    
 $main_table_cell_border_width = '1';  // (px)  border width for the cells of the main day/week/month tables
-$main_cell_height             = '17'; // (px)  height of the cells in the main day/week tables
+$main_cell_height             = '20'; // (px)  height of the cells in the main day/week tables
          
     
 // ***** FONTS ************************    
-$standard_font_family  = "Arial, 'Arial Unicode MS', Verdana, sans-serif";
-
+//$standard_font_family  = "Arial, 'Arial Unicode MS', Verdana, sans-serif";
+$standard_font_family  = "'Roboto', sans-serif";

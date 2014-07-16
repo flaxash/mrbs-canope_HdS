@@ -40,9 +40,9 @@ h2 {font-size: large; clear: both}
 
 img {border: 0}
 
-a:link    {color: <?php echo $anchor_link_color ?>;    text-decoration: none; font-weight: bold}
-a:visited {color: <?php echo $anchor_visited_color ?>; text-decoration: none; font-weight: bold}
-a:hover   {color: <?php echo $anchor_hover_color ?>;   text-decoration: underline; font-weight: bold} 
+a:link    {color: <?php echo $anchor_link_color ?>;    text-decoration: underline; font-weight: normal}
+a:visited {color: <?php echo $anchor_visited_color ?>; text-decoration: none; font-weight: normal}
+a:hover   {color: <?php echo $anchor_hover_color ?>;   text-decoration: underline; font-weight: normal} 
 
 tr.even_row td.new {background-color: <?php echo $row_even_color ?>}
 tr.odd_row td.new {background-color: <?php echo $row_odd_color ?>}
@@ -256,9 +256,9 @@ div.cell_header {position: relative; width: 100%; z-index: 20;         /* needs 
 #month_main div.cell_header a.week_number {opacity: 0.5; padding: 2px 4px 0 4px}
 
 div.booking_list {position: relative; z-index: 20;                      /* contains the list of bookings */
-    max-height: 80%; font-size: x-small;                                /* needs to be above new_booking */
+    max-height: 80%; font-size: 12px;                                /* needs to be above new_booking */
     overflow: <?php echo ($month_cell_scrolling ? 'auto' : 'visible') ?>}
-.booking_list a {font-size: x-small}
+.booking_list a {font-size: 12px; font-weight:normal;text-decoration: none}
 
 
 <?php
@@ -267,11 +267,11 @@ foreach ($color_types as $type => $col)
 {
   echo "td.$type {background-color: $col}\n";         // used in the day and week views
   if( $clipped_month )
-    echo ".month div.$type {float: left; max-height: 1.3em; height: 1.3em; min-height: 1.3em; overflow: hidden; background-color: $col}\n
-	.month_allRooms div.$type {float: left; max-height: 1.3em; height: 1.3em; min-height: 1.3em; overflow: hidden; background-color: $col}\n";   // used in the month view
+    echo ".month div.$type {float: left; max-height: 4em; height: 2em; min-height: 2em; overflow: hidden; background-color: $col}\n
+	.month_allRooms div.$type {float: left; max-height: 3em; height: 100%; overflow: hidden; background-color: $col}\n";   // used in the month view
   else
-    echo ".month div.$type {float: left; min-height: 1.3em; overflow: hidden; background-color: $col}\n
-	.month_allRooms div.$type {float: left; max-height: 1.3em; height: 1.3em; min-height: 1.3em; overflow: hidden; background-color: $col}\n";   // used in the month view
+    echo ".month div.$type {float: left; max-height: 4em; height: 2em; min-height: 2em; overflow: hidden; background-color: $col}\n
+	.month_allRooms div.$type {float: left; max-height: 3em; height: 100%; overflow: hidden; background-color: $col}\n";   // used in the month view
 }
 
 ?>
@@ -770,7 +770,7 @@ div#cal_next {float: left; margin-left: 1.0em}
 
 table.calendar {border-spacing: 0; border-collapse: collapse}
 .calendar th {min-width: 2.0em; text-align: center; font-weight: normal; background-color: transparent; color: <?php echo $standard_font_color ?>}
-.calendar td {text-align: center; font-size: x-small}
+.calendar td {text-align: center; font-size: small}
 <?php
 // set the styling for the "hidden" days in the mini-cals
 ?>
