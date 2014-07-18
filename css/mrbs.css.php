@@ -267,10 +267,10 @@ foreach ($color_types as $type => $col)
 {
   echo "td.$type {background-color: $col}\n";         // used in the day and week views
   if( $clipped_month )
-    echo ".month div.$type {float: left; max-height: 4em; height: 2em; min-height: 2em; overflow: hidden; background-color: $col}\n
+    echo ".month div.$type {float: left; max-height: 3em; height: 100%; overflow: hidden; background-color: $col}\n
 	.month_allRooms div.$type {float: left; max-height: 3em; height: 100%; overflow: hidden; background-color: $col}\n";   // used in the month view
   else
-    echo ".month div.$type {float: left; max-height: 4em; height: 2em; min-height: 2em; overflow: hidden; background-color: $col}\n
+    echo ".month div.$type {float: left; max-height: 3em; height: 100%; overflow: hidden; background-color: $col}\n
 	.month_allRooms div.$type {float: left; max-height: 3em; height: 100%; overflow: hidden; background-color: $col}\n";   // used in the month view
 }
 
@@ -744,7 +744,7 @@ table#banner {width: 100%; border-spacing: 0; border-collapse: collapse;
 #banner input.date {width: 6.5em; text-align: center}
 
 table#colour_key {clear: both; float: left; border-spacing: 0; border-collapse: collapse; margin-bottom: 0.5em}
-#colour_key td {width: 7.0em; padding: 2px; font-weight: bold;
+#colour_key td {width: 7.0em; padding: 2px; font-weight: normal;
     color: <?php echo $colour_key_font_color ?>;
     border: <?php echo $main_table_cell_border_width ?>px solid <?php echo $main_table_body_h_border_color ?>}
 #colour_key td#row_padding {border-right: 0; border-bottom: 0}

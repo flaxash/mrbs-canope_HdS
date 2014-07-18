@@ -18,6 +18,7 @@ $page_level['check_slot_ajax.php']       = ($auth['deny_public_access']) ? 1 : 0
 $page_level['day.php']                   = ($auth['deny_public_access']) ? 1 : 0;
 $page_level['help.php']                  = ($auth['deny_public_access']) ? 1 : 0;
 $page_level['month.php']                 = ($auth['deny_public_access']) ? 1 : 0;
+$page_level['month_allRooms.php']        = ($auth['deny_public_access']) ? 1 : 0;
 $page_level['report.php']                = ($auth['deny_public_access']) ? 1 : 0;
 $page_level['search.php']                = ($auth['deny_public_access']) ? 1 : 0;
 $page_level['view_entry.php']            = ($auth['deny_public_access']) ? 1 : 0;

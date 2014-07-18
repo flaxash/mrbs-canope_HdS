@@ -395,12 +395,12 @@ $vocab["restore_original"]   = "Restaurer l'original";
 
 // Entry types
 $vocab["type.A"]            = "DAFPA";
-$vocab["type.B"]            = "IA92";
+$vocab["type.B"]            = "DSDEN92";
 $vocab["type.C"]            = "CANOPE";
-$vocab["type.D"]            = "CADRES";
+$vocab["type.D"]            = "ESPE";
 $vocab["type.F"]            = "CG92";
 $vocab["type.G"]            = "AUTRE";
-$vocab["type.H"]            = "PDF";
+$vocab["type.H"]            = "RECTORAT";
 
 
 // General

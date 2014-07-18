@@ -78,16 +78,15 @@ $multiple_control_color         = "#ffff22";        // background colour for the
 // These are the colours used for distinguishing between the dfferent types of bookings in the main
 // displays in the day, week and month views
 $color_types = array(
-    'A' => "#00c3dc",
-    'B' => "#00cf86",
-    'C' => "#ff8b40",
-    'D' => "#f5cc39",
-    'E' => "#e97fcd",
-    'F' => "#91928a",
-    'G' => "#ccffcc",
-    'H' => "#d9d982",
-    'I' => "#99cc66",
-    'J' => "#e6ffe6"); 
+    'A' => "#9087FB",
+    'B' => "#DA50CE",
+    'C' => "#CC4538",
+    'D' => "#5CCE34",
+    'E' => "#000000",
+    'F' => "#FBC600",
+    'G' => "#2F91AD",
+    'H' => "#ADDCFF",
+    'I' => "#000000"); 
 
 // colours used for pending.php and bookings awaiting approval
 $outstanding_color         = "#FFF36C"; // font colour for the outstanding reservations message in the header
