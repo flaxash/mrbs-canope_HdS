@@ -557,6 +557,9 @@ if (empty($returl) || ($returl_base[0] == "edit_entry.php") || ($returl_base[0] 
     case "week":
       $returl = "week.php";
       break;
+	case "month_allRooms":
+  	   $returl = "month_allRooms.php";
+	break;
     default:
       $returl = "day.php";
   }

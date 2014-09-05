@@ -169,7 +169,7 @@ $display_calendar_bottom = FALSE;
 
 // Define default starting view (month, week or day)
 // Default is day
-$default_view = "month";
+$default_view = "month_allRooms";
 
 // Define default room to start with (used by index.php)
 // Room numbers can be determined by looking at the Edit or Delete URL for a

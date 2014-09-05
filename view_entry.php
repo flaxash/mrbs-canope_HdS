@@ -269,6 +269,9 @@ if (!isset($returl))
       case "week":
         $returl = "week.php";
         break;
+	  case "month_allRooms":
+  	    $returl = "month_allRooms.php";
+	    break;
       default:
         $returl = "day.php";
     }
