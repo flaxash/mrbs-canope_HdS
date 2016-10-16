@@ -39,40 +39,41 @@ $timezone = "Europe/Paris";
 /*******************
  * Database settings
  ******************/
-// Which database system: "pgsql"=PostgreSQL, "mysql"=MySQL,
-// "mysqli"=MySQL via the mysqli PHP extension
-$dbsys = "mysql";
+// Which database system: "pgsql"=PostgreSQL, "mysqli"=MySQL
+$dbsys = "mysqli";
 // Hostname of database server. For pgsql, can use "" instead of localhost
 // to use Unix Domain Sockets instead of TCP/IP. For mysql/mysqli "localhost"
 // tells the system to use Unix Domain Sockets, and $db_port will be ignored;
 // if you want to force TCP connection you can use "127.0.0.1".
-$db_host = "localhost";
+$db_host = "canopefrslmrbs92.mysql.db";
 // If you need to use a non standard port for the database connection you
 // can uncomment the following line and specify the port number
 // $db_port = 1234;
 // Database name:
-$db_database = "cd922";
+$db_database = "canopefrslmrbs92";
 // Schema name.  This only applies to PostgreSQL and is only necessary if you have more
 // than one schema in your database and also you are using the same MRBS table names in
 // multiple schemas.
 //$db_schema = "public";
 // Database login user name:
-$db_login = "cd922";
+$db_login = "canopefrslmrbs92";
 // Database login password:
-$db_password = 'jk6xkw5k';
+$db_password = 'Rnsdc92150';
 // Prefix for table names.  This will allow multiple installations where only
 // one database is available
 $db_tbl_prefix = "mrbs_";
 // Uncomment this to NOT use PHP persistent (pooled) database connections:
-// $db_nopersist = 1;
+$db_nopersist = 1;
+
 
 //users 
 $auth["user"]["xavier"] = "axa92100";
-$auth["user"]["cddp92"] = "gestion!";
+$auth["user"]["canope92"] = "gestion!";
 $auth["user"]["administrator"] = "rnsdc92100";
 
 
 $auth["admin"][] = "xavier";
+$auth["admin"][] = "canope92";
 $auth["admin"][] = "administrator";
 /* Add lines from systemdefaults.inc.php and areadefaults.inc.php below here
    to change the default configuration. Do _NOT_ modify systemdefaults.inc.php
@@ -81,7 +82,7 @@ $auth["admin"][] = "administrator";
  * Site identification information
  *********************************/
 $mrbs_admin = "Xavier Aubrun";
-$mrbs_admin_email = "xavier.aubrun@crdp.ac-versailles.fr";
+$mrbs_admin_email = "xavier.aubrun@reseau-canope.fr";
 // NOTE:  there are more email addresses in $mail_settings below.    You can also give
 // email addresses in the format 'Full Name <address>', for example:
 // $mrbs_admin_email = 'Booking System <admin_email@your.org>';
@@ -92,7 +93,7 @@ $mrbs_admin_email = "xavier.aubrun@crdp.ac-versailles.fr";
 // The company name is mandatory.   It is used in the header and also for email notifications.
 // The company logo, additional information and URL are all optional.
 
-$mrbs_company = "CANOPÉ Hauts-de-Seine";   // This line must always be uncommented ($mrbs_company is used in various places)
+$mrbs_company = "Atelier Canopé 92 - Suresnes";   // This line must always be uncommented ($mrbs_company is used in various places)
 
 // Uncomment this next line to use a logo instead of text for your organisation in the header
 $mrbs_company_logo = "images/canope_200px.png";    // name of your logo file.   This example assumes it is in the MRBS directory
@@ -176,6 +177,7 @@ $default_view = "month_allRooms";
 // room on the admin page.
 // Default is 0
 $default_room = 0;
+
 
 // PRIVATE BOOKINGS SETTINGS
 

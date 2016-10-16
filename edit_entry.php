@@ -548,8 +548,9 @@ function create_field_entry_custom_field($field, $key, $disabled=FALSE)
                   'mandatory'  => isset($is_mandatory_field["entry.$key"]) && $is_mandatory_field["entry.$key"]);
   // Output a checkbox if it's a boolean or integer <= 2 bytes (which we will
   // assume are intended to be booleans)
+  
   //pour tests
-  //echo($field['name']);
+  //echo($field['nature']);
   
   if (($field['nature'] == 'boolean') || 
     (($field['nature'] == 'integer') && isset($field['length']) && ($field['length'] <= 2)) )
@@ -569,7 +570,9 @@ function create_field_entry_custom_field($field, $key, $disabled=FALSE)
   //Output a select list if it's an enum 
   elseif ($field['nature'] == 'enum')
   {
+    //echo($field['name']);
 	  $values = get_enum_values($field['name']);
+    
 	  //echo count($values);
                   
 	  foreach ($values as $key)
@@ -577,7 +580,8 @@ function create_field_entry_custom_field($field, $key, $disabled=FALSE)
 		$params['options'][$key] = $key;
 	  }
   
-  generate_select($params);
+    generate_select($params);
+     //enumDropdown($field['name'], $echo = true);
   }
   // Otherwise output an input
   else

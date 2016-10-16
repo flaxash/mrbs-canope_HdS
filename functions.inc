@@ -2590,22 +2590,74 @@ function is_cli()
 }
 //fonctions persos ajoutées
 //retrouve les valeurs des champs enum de la table entry
-function get_enum_values( $field )
+function get_enum_values( $field ) 
 {
-	$sql = "SHOW COLUMNS FROM mrbs_entry WHERE Field = '{$field}'";
-   	$result = sql_query($sql);
-	//print($result);
-	$row = mysql_fetch_array($result , MYSQL_NUM );
-	//print($row);
-   	$type = $row[1];
-	//print($type);
+    $enum= [];
+    if ($field == 'cadre')
+    {
+        $enum = ['évènement','formation continue','groupe de travail','groupe institutionnel','autre'];
+    }
+    if ($field == 'publics')
+    {
+        $enum = ['1er degré','2d degré','interdegré','cadres','scolaires','autres'];
+    }
+    if ($field == 'objet')
+    {
+        $enum = ['exposition','animation','séminaire','réunion','stage','autre'];
+    }
+    if ($field == 'classe_nomade')
+    {
+        $enum = ['non','mac','pc','indifférent'];
+    }
+    return $enum;
+
+}
+
+function get_enum_values_old( $field )
+{
+	//$sql = "SHOW COLUMNS FROM mrbs_entry LIKE $field";
+  
+  $sql = "SELECT COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = \'mrbs_entry\' AND COLUMN_NAME = \'".$field."\'";
+  echo("<script>console.log('sql : ".$sql."');</script>");
+  $result = sql_query($sql);
+  echo("<script>console.log('PHP: ".gettype($result)."');</script>");
+  $row = mysql_fetch_array($result , MYSQL_NUM );
+  echo("<script>console.log('PHP: ".count($row)."');</script>");
+  $type = $row[1];
 	
 	preg_match('/enum\((.*)\)$/', $type, $matches);
     foreach( explode(',', $matches[1]) as $value )
     {
          $enum[] = trim( $value, "'" );
     }
-	//echo (count($row));
-	//echo (count($type));
+    return $enum;
+}
+function enumDropdown($column_name, $echo = false)
+{
+   $selectDropdown = "<select name=\"$column_name\">";
+   $result = sql_query("SELECT COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS
+       WHERE TABLE_NAME = 'mrbs_entry' AND COLUMN_NAME = '$column_name'")
+   or die (mysql_error());
+
+    $row = mysql_fetch_array($result);
+    $enumList = explode(",", str_replace("'", "", substr($row['COLUMN_TYPE'], 5, (strlen($row['COLUMN_TYPE'])-6))));
+
+    foreach($enumList as $value)
+         $selectDropdown .= "<option value=\"$value\">$value</option>";
+
+    $selectDropdown .= "</select>";
+
+    if ($echo)
+        echo $selectDropdown;
+
+    return $selectDropdown;
+}
+function get_enum_values1( $field )
+{
+    $sql = "SELECT COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'mrbs_entry' AND COLUMN_NAME = $field";
+  $result = sql_query($sql);
+    $type = $this->db->query( "SHOW COLUMNS FROM 'mrbs_entry' WHERE Field = '{$field}'" )->row( 0 )->Type;
+    preg_match("/^enum\(\'(.*)\'\)$/", $type, $matches);
+    $enum = explode("','", $matches[1]);
     return $enum;
 }

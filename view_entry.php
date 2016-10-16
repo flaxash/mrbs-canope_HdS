@@ -387,9 +387,9 @@ if ($approval_enabled && !$room_disabled && ($status & STATUS_AWAITING_APPROVAL)
 }
 
 echo create_details_body($row, TRUE, $keep_private, $room_disabled);
-
+echo "</table>";
 ?>
-</table>
+
 
 <div id="view_entry_nav">
   <?php

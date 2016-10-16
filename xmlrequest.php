@@ -6,8 +6,8 @@
 
 require_once "functions.inc";
 
-$database="cd922";
-$connect = mysql_connect("localhost","cd922","jk6xkw5k");
+$database="canopefrslmrbs92";
+$connect = mysql_connect("canopefrslmrbs92.mysql.db","canopefrslmrbs92","Rnsdc92150");
 mysql_select_db($database, $connect);
 
 //récupère la date de début et celle de fin sous la forme d'un timestamp (timestamps dans la base de données)
