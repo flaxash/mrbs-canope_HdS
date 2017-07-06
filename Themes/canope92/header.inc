@@ -52,7 +52,7 @@ function print_theme_header($day, $month, $year, $area, $room)
   
   <meta charset="<?php echo get_charset(); ?>">
   <title><?php echo get_vocab("mrbs") ?></title>
-  <link href='http://fonts.googleapis.com/css?family=Roboto:500&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:500&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <?php
   require_once "style.inc";
   require_once "js.inc";

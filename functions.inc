@@ -2592,22 +2592,26 @@ function is_cli()
 //retrouve les valeurs des champs enum de la table entry
 function get_enum_values( $field ) 
 {
-    $enum= [];
+    
     if ($field == 'cadre')
     {
-        $enum = ['évènement','formation continue','groupe de travail','groupe institutionnel','autre'];
+        $enum = array('évènement','formation continue','groupe de travail','groupe institutionnel','autre');
     }
     if ($field == 'publics')
     {
-        $enum = ['1er degré','2d degré','interdegré','cadres','scolaires','autres'];
+        $enum = array('1er degré','2d degré','interdegré','cadres','scolaires','autres');
     }
     if ($field == 'objet')
     {
-        $enum = ['exposition','animation','séminaire','réunion','stage','autre'];
+        $enum = array('exposition','animation','séminaire','réunion','stage','autre');
+    }
+    if ($field == 'intervention_canope')
+    {
+        $enum = array('non','1h','2h','3h','journée');
     }
     if ($field == 'classe_nomade')
     {
-        $enum = ['non','mac','pc','indifférent'];
+        $enum = array('non','mac','pc','indifférent');
     }
     return $enum;
 
