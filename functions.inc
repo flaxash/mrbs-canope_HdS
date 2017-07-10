@@ -2595,7 +2595,7 @@ function get_enum_values( $field )
     
     if ($field == 'cadre')
     {
-        $enum = array('évènement','formation continue','groupe de travail','groupe institutionnel','autre');
+        $enum = array('évènement','formation','réunion','médiation','autre');
     }
     if ($field == 'publics')
     {
@@ -2603,7 +2603,7 @@ function get_enum_values( $field )
     }
     if ($field == 'objet')
     {
-        $enum = array('exposition','animation','séminaire','réunion','stage','autre');
+        $enum = array('conférence','exposition','animation','séminaire','réunion GdT','réunion GI','autre');
     }
     if ($field == 'intervention_canope')
     {
