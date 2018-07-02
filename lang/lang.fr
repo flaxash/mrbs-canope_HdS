@@ -84,7 +84,7 @@ $vocab["rep_rep_day"]        = "Jour&nbsp;";
 $vocab["rep_freq"]           = "Fréquence&nbsp;";
 $vocab["rep_num_weeks"]      = "Intervalle de semaines";
 $vocab["skip_conflicts"]     = "Ignorer les conflits";
-$vocab["ctrl_click"]         = "CTRL + clic souris pour sélectionner plusieurs salles";
+$vocab["ctrl_click"]         = "CTRL + clic souris pour sélectionner plusieurs éléments";
 $vocab["entryid"]            = "Réservation N°";
 $vocab["repeat_id"]          = "Périodicité N°";
 $vocab["you_have_not_entered"] = "Vous n'avez pas saisi";
@@ -405,4 +405,8 @@ $vocab["type.H"]            = "RECTORAT";
 
 // General
 $vocab["back"]               = "Retour";
+
+//Canope92
+$vocab_override['fr']['entry.nb_inscrits'] = "nombre d'inscrits";
+
 

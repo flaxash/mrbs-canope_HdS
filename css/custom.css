@@ -1,0 +1,5 @@
+select {
+    margin-right: 2em !important;
+    height: auto !important;
+    max-height: 150px;
+}

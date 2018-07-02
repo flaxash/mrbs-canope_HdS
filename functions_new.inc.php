@@ -1106,10 +1106,6 @@ function generate_select($params)
       else
       {
         $first_child = each($params['options']);
-        
-        //réglage de la taille des select lorsque c'est à choix multiples
-        if ($params['multiple']) {$params['size'] = count($params['options']);}
-        
         if (($first_child['key'] !== '') && ($first_child['value'] !== ''))
         {
           $message = "The first child option element of a select element with a required " .
@@ -1143,7 +1139,7 @@ function generate_select($params)
   $html .= "<select id=\"" . $params['id'] . "\" name=\"" . $params['name'] . "\"";
   $html .= ($params['disabled']) ? " disabled=\"disabled\"" : "";
   $html .= ($params['mandatory']) ? " required aria-required=\"true\"" : "";
-  $html .= ($params['multiple']) ? " multiple size=\"".count($params['options'])."\"" : "";
+  $html .= ($params['multiple']) ? " multiple" : "";
   $html .= (isset($params['attributes'])) ? " " . $params['attributes'] : "";
   $html .= ">\n";
 
@@ -2609,32 +2605,18 @@ function get_enum_values( $field )
     {
         $enum = array('atelier','conférence','séminaire','salon','atelier en mode codesign','conseil et expertise','sans objet');
     }
+    if ($field == 'intervention_canope')
+    {
+        $enum = array('non','1h','2h','3h','journée');
+    }
     if ($field == 'classe_nomade')
     {
         $enum = array('non','mac','pc','indifférent');
     }
-    if ($field == 'liens avec le programme académique')
+    if ($field == 'axes de Versailles 2020')
     {
-        $enum = array('aucun','axe 1 - les nouveaux enseignants','axe 2 - le travail collaboratif','axe 3 - les langues','axe 4 - les enseignements pratiques interdisciplinaires','axe 5 - la réforme du collège','axe 6 - le parcours citoyen','axe 7 - le parcours éducation artistique et culturelle','axe 8 - le parcours Avenir','axe 9 - développer l esprit critique','axe 10 - la voie professionnelle','axe 11 - les élèves à besoins particuliers','axe 12 - éducation à la santé');
+        $enum = array('axe 1 - les nouveaux enseignants','axe 5 - la réforme du collège','axe 2 - le travail collaboratif','axe 3 - les langues','axe 4 - les enseignements pratiques interdisciplinaires','axe 6 - le parcours citoyen','axe 7 - le parcours éducation artistique et culturelle','axe 8 - le parcours Avenir','axe 9 - développer l esprit critique','axe 10 - la voie professionnelle','axe 11 - les élèves à besoins particuliers','axe 12 - éducation à la santé');
     }
-    if ($field == 'liens avec les axes prioritaires du réseau')
-    {
-        
-        $enum = array('aucun','nouveaux enseignants','langues','enseignement professionnel');
-    }
-    if ($field == 'intervention formation')
-    {
-        $enum = array('non','1h','2h','3h','journée');
-    }
-    if ($field == 'intervention médiation')
-    {
-        $enum = array('non','1h','2h','3h','journée');
-    }
-    if ($field == 'fiche Noticia')
-    {
-        $enum = array('pas besoin','à faire','déjà renseignée');
-    }
-    
     return $enum;
 
 }

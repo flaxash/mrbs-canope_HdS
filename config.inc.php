@@ -45,20 +45,20 @@ $dbsys = "mysqli";
 // to use Unix Domain Sockets instead of TCP/IP. For mysql/mysqli "localhost"
 // tells the system to use Unix Domain Sockets, and $db_port will be ignored;
 // if you want to force TCP connection you can use "127.0.0.1".
-$db_host = "canopefrslmrbs92.mysql.db";
+$db_host = $_SERVER['SERVEUR_MYSQL'];
 // If you need to use a non standard port for the database connection you
 // can uncomment the following line and specify the port number
 // $db_port = 1234;
 // Database name:
-$db_database = "canopefrslmrbs92";
+$db_database = "versailles_db19";
 // Schema name.  This only applies to PostgreSQL and is only necessary if you have more
 // than one schema in your database and also you are using the same MRBS table names in
 // multiple schemas.
 //$db_schema = "public";
 // Database login user name:
-$db_login = "canopefrslmrbs92";
+$db_login = "crdp-versailles";
 // Database login password:
-$db_password = 'Rnsdc92150';
+$db_password = 'cr&Dp_v3R$a1LleS;';
 // Prefix for table names.  This will allow multiple installations where only
 // one database is available
 $db_tbl_prefix = "mrbs_";
@@ -132,7 +132,7 @@ $year_range['ahead'] = 1;
 $theme = "canope92";
 
 // Use the $custom_css_url to override the standard MRBS CSS.
-//$custom_css_url = 'css/custom.css';
+$custom_css_url = 'css/custom.css';
 
 //types
 $booking_types[] = "A";
@@ -228,3 +228,6 @@ $is_private_field['entry.name'] = FALSE;
 $is_private_field['entry.description'] = FALSE;
 $is_private_field['entry.create_by'] = FALSE;
 
+
+// REQUIRED FIELDS FOR BOOKING 
+//$is_mandatory_field['entry.name'] = true;

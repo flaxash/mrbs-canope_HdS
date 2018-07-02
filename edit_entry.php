@@ -562,7 +562,7 @@ function create_field_entry_custom_field($field, $key, $disabled=FALSE)
   elseif (($field['nature'] == 'character') && isset($field['length']) && ($field['length'] > $text_input_max))
   {
     // HTML5 does not allow a pattern attribute for the textarea element
-    $params['attributes'][] = 'rows="8"';
+    $params['attributes'][] = 'rows="3"';
     $params['attributes'][] = 'cols="40"';
     generate_textarea($params);   
   }
@@ -574,10 +574,27 @@ function create_field_entry_custom_field($field, $key, $disabled=FALSE)
 	  $values = get_enum_values($field['name']);
     
 	  //echo count($values);
-                  
+    //echo ($field['name']);
+      
+    //Ajout d'un chapeau pour les champs intervention Canopé
+    if ($field['name'] =='intervention formation') 
+    {
+        echo " <span> intervention médiateur hors action Canopé :</span> <br /> <br />";
+    }
+    //sélection multiple pour Axes de Versailles 2020    
+    if ($field['name'] =='liens avec le programme académique') 
+    {
+        $params['multiple'] = TRUE; 
+        echo " \t  \t <span>" . get_vocab("ctrl_click") . "</span> \n";
+    }
+     if ($field['name'] =='liens avec les axes prioritaires du réseau') 
+    {
+        $params['multiple'] = TRUE; 
+         echo " \t \t <span>" . get_vocab("ctrl_click") . "</span>\n";
+    }
 	  foreach ($values as $key)
 	  {
-		$params['options'][$key] = $key;
+        $params['options'][$key] = $key;  
 	  }
   
     generate_select($params);
